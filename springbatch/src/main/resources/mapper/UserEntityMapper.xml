@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbatch.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.example.springbatch.entity.UserEntity">
+   <!-- <result column="id" jdbcType="INTEGER" property="id" />-->
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="createTime" jdbcType="VARCHAR" property="createTime" />
+
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_name,sex,age,address,status
+  </sql>
+
+
+  <select id="queryInfoById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user_copy1
+   <!-- where um_id = #{umId,jdbcType=VARCHAR}-->
+  </select>
+
+
+ <!-- <select id="FindUserByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from mr_user
+    where um_account = #{umAccount,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mr_user
+    where um_id = #{umAccount,jdbcType=VARCHAR}
+  </delete>-->
+<!--  <insert id="add" parameterType="com.example.test.demo.entity.UserEntity">
+    insert into stu (id, stuname)
+    values (#{id,jdbcType=INTEGER}, #{stuname,jdbcType=VARCHAR})
+  </insert>
+
+  <select id="list" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from stu
+
+  </select>-->
+  <!-- <insert id="insertSelective" parameterType="com.mr.mr_admin.dto.UserDto">
+     insert into mr_user
+     <trim prefix="(" suffix=")" suffixOverrides=",">
+       <if test="umId != null">
+         um_id,
+       </if>
+       <if test="umAccount != null">
+         um_account,
+       </if>
+       <if test="umPassword != null">
+         um_password,
+       </if>
+       <if test="umPhone != null">
+         um_phone,
+       </if>
+       <if test="umStatus != null">
+         um_status,
+       </if>
+       <if test="umPhint != null">
+         um_phint,
+       </if>
+       <if test="umRemark != null">
+         um_remark,
+       </if>
+       <if test="umTelphone != null">
+         um_telphone,
+       </if>
+       <if test="umNickname != null">
+         um_nickname,
+       </if>
+       <if test="umBalance != null">
+         um_balance,
+       </if>
+     </trim>
+     <trim prefix="values (" suffix=")" suffixOverrides=",">
+       <if test="umId != null">
+         #{umId,jdbcType=VARCHAR},
+       </if>
+       <if test="umAccount != null">
+         #{umAccount,jdbcType=VARCHAR},
+       </if>
+       <if test="umPassword != null">
+         #{umPassword,jdbcType=VARCHAR},
+       </if>
+       <if test="umPhone != null">
+         #{umPhone,jdbcType=VARCHAR},
+       </if>
+       <if test="umStatus != null">
+         #{umStatus,jdbcType=TINYINT},
+       </if>
+       <if test="umPhint != null">
+         #{umPhint,jdbcType=TINYINT},
+       </if>
+       <if test="umRemark != null">
+         #{umRemark,jdbcType=VARCHAR},
+       </if>
+       <if test="umTelphone != null">
+         #{umTelphone,jdbcType=VARCHAR},
+       </if>
+       <if test="umNickname != null">
+         #{umNickname,jdbcType=VARCHAR},
+       </if>
+       <if test="umBalance != null">
+         #{umBalance,jdbcType=DECIMAL},
+       </if>
+     </trim>
+   </insert>
+   <update id="updateByPrimaryKeySelective" parameterType="com.mr.mr_admin.dto.UserDto">
+     update mr_user
+     <set>
+       <if test="umAccount != null">
+         um_account = #{umAccount,jdbcType=VARCHAR},
+       </if>
+       <if test="umPassword != null">
+         um_password = #{umPassword,jdbcType=VARCHAR},
+       </if>
+       <if test="umPhone != null">
+         um_phone = #{umPhone,jdbcType=VARCHAR},
+       </if>
+       <if test="umStatus != null">
+         um_status = #{umStatus,jdbcType=TINYINT},
+       </if>
+       <if test="umPhint != null">
+         um_phint = #{umPhint,jdbcType=TINYINT},
+       </if>
+       <if test="umRemark != null">
+         um_remark = #{umRemark,jdbcType=VARCHAR},
+       </if>
+       <if test="umTelphone != null">
+         um_telphone = #{umTelphone,jdbcType=VARCHAR},
+       </if>
+       <if test="umNickname != null">
+         um_nickname = #{umNickname,jdbcType=VARCHAR},
+       </if>
+       <if test="umBalance != null">
+         um_balance = #{umBalance,jdbcType=DECIMAL},
+       </if>
+     </set>
+     where um_id = #{umId,jdbcType=VARCHAR}
+   </update>
+   <update id="updateByPrimaryKey" parameterType="com.mr.mr_admin.dto.UserDto">
+     update mr_user
+     set um_account = #{umAccount,jdbcType=VARCHAR},
+       um_password = #{umPassword,jdbcType=VARCHAR},
+       um_phone = #{umPhone,jdbcType=VARCHAR},
+       um_status = #{umStatus,jdbcType=TINYINT},
+       um_phint = #{umPhint,jdbcType=TINYINT},
+       um_remark = #{umRemark,jdbcType=VARCHAR},
+       um_telphone = #{umTelphone,jdbcType=VARCHAR},
+       um_nickname = #{umNickname,jdbcType=VARCHAR},
+       um_balance = #{umBalance,jdbcType=DECIMAL}
+     where um_id = #{umId,jdbcType=VARCHAR}
+   </update>-->
+
+</mapper>

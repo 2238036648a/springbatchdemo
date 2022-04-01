@@ -1,0 +1,29 @@
+<datas>
+    <data>
+        <user_name>小嘿</user_name>
+        <sex>2</sex>
+        <age>12</age>
+        <address>山东</address>
+        <status>1</status>
+        <!--<create_time>2018-10-08</create_time>-->
+    </data>
+
+    <data>
+        <user_name>小蓝</user_name>
+        <sex>2</sex>
+        <age>12</age>
+        <address>烟台</address>
+        <status>1</status>
+        <!--<create_time>2020-10-08</create_time>-->
+    </data>
+
+
+    <data>
+        <user_name>小紫</user_name>
+        <sex>1</sex>
+        <age>25</age>
+        <address>青岛</address>
+        <status>2</status>
+        <!--<create_time>2021-10-08</create_time>-->
+    </data>
+</datas>
